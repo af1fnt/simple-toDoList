@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const prisma = new PrismaClient();
 
-// Code Here YA
+app.use('/api/auth', authRoutes);
 
 // Start Server
 app.listen(port, () => {
