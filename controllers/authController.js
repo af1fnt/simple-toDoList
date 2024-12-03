@@ -7,7 +7,7 @@ const prismaClient = new prisma();
 const register = async (req, res) => {
   const { email, password } = req.body;
 
-  // Cek apakah email sudah terdaftar
+
   const userExists = await prismaClient.user.findUnique({
     where: { email }
   });
@@ -16,7 +16,7 @@ const register = async (req, res) => {
     return res.status(400).json({ message: 'User already exists' });
   }
 
-  // Hash password
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Buat user baru
