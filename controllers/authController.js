@@ -7,7 +7,7 @@ const prismaClient = new prisma();
 const register = async (req, res) => {
   const { email, password } = req.body;
 
-  // Cek apakah email sudah terdaftar
+
   const userExists = await prismaClient.user.findUnique({
     where: { email }
   });
