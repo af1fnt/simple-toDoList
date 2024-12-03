@@ -10,5 +10,5 @@ app.use('/api/auth', authRoutes);
 
 // Start Server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}.`)
 })
