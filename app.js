@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
 const port = 3000
+import authRoutes from './routes/authRoutes.js';
 
+app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Start Server
 app.listen(port, () => {
